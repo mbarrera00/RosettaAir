@@ -1,0 +1,378 @@
+:root {
+  --accent: #1f4e79;
+  --accent-2: #2e75b6;
+  --panel-bg: #f4f4f4;
+  --page-bg: #ffffff;
+  --text: #222831;
+  --muted: #5a6470;
+  --border: #d8dde3;
+  --error: #b3261e;
+  --shadow: 0 1px 2px rgba(31, 78, 121, 0.08);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background: var(--page-bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+button {
+  font-family: inherit;
+}
+
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px 24px 48px;
+}
+
+/* Header */
+.app-header {
+  padding: 16px 0 24px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.app-subtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.request-form {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) auto;
+  gap: 12px 16px;
+  align-items: end;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.field label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.field input,
+.field select {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--text);
+  height: 36px;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 0;
+  border-color: var(--accent-2);
+}
+
+.field-submit {
+  align-self: end;
+}
+
+.primary {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+  padding: 9px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  height: 36px;
+  white-space: nowrap;
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+}
+
+.primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-error {
+  color: var(--error);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Preset bar */
+.preset-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preset-bar-label {
+  color: var(--muted);
+  font-size: 13px;
+  margin-right: 4px;
+}
+
+.preset-button {
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--accent);
+  padding: 7px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.preset-button:hover {
+  background: var(--panel-bg);
+  border-color: var(--accent-2);
+}
+
+/* Hint */
+.hint {
+  color: var(--muted);
+  background: var(--panel-bg);
+  border: 1px dashed var(--border);
+  padding: 16px;
+  border-radius: 6px;
+  margin: 0;
+}
+
+/* Offer summary */
+.offer-summary {
+  margin: 0 0 24px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.offer-summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.offer-summary-header h2 {
+  margin: 0;
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.offer-summary-pax {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.offer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.offer-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.offer-item:last-child {
+  border-bottom: none;
+}
+
+.offer-item-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.offer-flight {
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 70px;
+}
+
+.offer-times {
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.offer-cabin {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.offer-item-total {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Panels grid: clockwise reading PAOREQ, AirShoppingRQ, AirShoppingRS, PAORES.
+   Top row is requests, bottom row is responses.
+   Left column is EDIFACT, right column is NDC. */
+.panel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "p1 p2"
+    "p4 p3";
+  gap: 16px;
+}
+
+.result-panel {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  height: 420px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.result-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--accent);
+  color: #fff;
+}
+
+.result-panel-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.result-panel-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.result-panel-copy {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.result-panel-copy:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.result-panel-body {
+  margin: 0;
+  padding: 12px;
+  overflow: auto;
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.5;
+  background: var(--panel-bg);
+  white-space: pre;
+  color: var(--text);
+}
+
+/* Footer */
+.app-footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Narrow screens: form stacks, panels collapse to one column 1, 2, 3, 4. */
+@media (max-width: 900px) {
+  .request-form {
+    grid-template-columns: 1fr 1fr;
+  }
+  .field-submit {
+    grid-column: 1 / -1;
+  }
+  .panel-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "p1"
+      "p2"
+      "p3"
+      "p4";
+  }
+}
+
+@media (max-width: 520px) {
+  .request-form {
+    grid-template-columns: 1fr;
+  }
+  .app-title {
+    font-size: 32px;
+  }
+}
